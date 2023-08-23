@@ -42,10 +42,10 @@ table.on("rowClick", function(e, row){
     $.ajax({
         url: '/test',
         method: 'post',
-        dataType: 'html',
-        data: {text: 'txtout=123'},
+        dataType: 'json',
+        data: row.getData(),
         success: function(data){
-            alert('Получили такой ответ от сервера: ' + data);
+            alert('Получили такой ответ от сервера: ' + JSON.stringify(data));
         }
     });
 
