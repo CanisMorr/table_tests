@@ -8,10 +8,10 @@ def hello():
     return render_template('table.html')
 
 @app.route('/test', methods=['GET', 'POST'])
-def login():
+def testfunc():
     if request.method == 'POST':
-        txtout = request.form['txtout']
-        return 'Получили POST с данными: ' + txtout
+        #Тут мы получили POST, в который передались какие-то данные. Ответ дадим статический
+        return '{"id":777,"name":"Новое Имя","age":"777","col":"Розовый","dob":"22/05/1982"}'
 
     else:
         return 'Допускаем только POST, а получили GET'
