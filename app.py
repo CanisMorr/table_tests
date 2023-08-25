@@ -20,7 +20,8 @@ def testfunc():
         print('dob: ' + request.form['dob'])
 
         # И дадим ответ, сейчас статический
-        return '{"id":777,"name":"Новое Имя","age":"777","col":"Розовый","dob":"22/05/1982"}'
+        otvet = '{"id":777,"name":"Новое Имя","age":"777","col":"Розовый","dob":"22/05/1982"}'
+        return otvet
 
     else:
         return 'Допускаем только POST, а получили GET'
