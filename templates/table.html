@@ -36,14 +36,18 @@ var table = new Tabulator("#example-table", {
 
 //trigger to click
 table.on("rowClick", function(e, row){
-	console.log(row.getData());				// Write row data to console
-	txtout.value = JSON.stringify(row.getData());		// Write JSON-formated row data to textarea
+	//console.log(row.getData());				// Write row data to console
+	//txtout.value = JSON.stringify(row.getData());		// Write JSON-formated row data to textarea
+
+    JsonPOV = JSON.parse ('{"PERIODKEY":"test","LOCATION_TYPE":"GRF"}')
+
+    console.log(JsonPOV)
 
     $.ajax({
         url: '/test',
         method: 'post',
         dataType: 'json',
-        data: row.getData(),
+        data: JsonPOV,  //data: row.getData(),
         success: function(data){
             alert('Получили такой ответ от сервера: ' + JSON.stringify(data));
         }
